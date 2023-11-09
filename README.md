@@ -1,7 +1,7 @@
 # BoltFinance - Seu App Financeiro
 
 ![Status do Projeto](https://img.shields.io/badge/Status-Projeto%20Finalizado-brightgreen)
-![Licença](https://img.shields.io/badge/Licen%C3%A7a-Nome%20da%20Licen%C3%A7a-blue)
+![Licença](https://img.shields.io/badge/Licen%C3%A7a-MIT%20Licence-blue)
 
 ## Sobre o Projeto
 
@@ -16,7 +16,7 @@ BoltFinance é mais do que um simples aplicativo financeiro em C; é a solução
 
 ## Licença
 
-Este projeto é licenciado sob a [Nome da Licença](link_para_licenca). Consulte o arquivo LICENSE.md para detalhes.
+Este projeto é licenciado sob a [MIT License](https://github.com/marcus6n/gestao-de-despesas/blob/main/LICENSE). Consulte o arquivo LICENSE.md para detalhes.
 
 ---
 
