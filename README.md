@@ -11,8 +11,8 @@ BoltFinance é mais do que um simples aplicativo financeiro em C; é a solução
 
 - [@marcus6n](https://github.com/marcus6n) - UC22103145
 - [@isahlbbh](https://github.com/isahlbbh) - UC22200311
-- [Nome do Membro 3](link_para_perfil_github)
-- [Nome do Membro 4](link_para_perfil_github)
+- [@Wallacy0157](https://github.com/Wallacy0157) - UC22200155
+- [@guilhermelevi](https://github.com/guilhermelevi) - UC22200582
 
 ## Licença
 
