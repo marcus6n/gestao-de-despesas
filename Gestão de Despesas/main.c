@@ -4,6 +4,7 @@
 
 #define MAX_DESPESAS 100
 
+// Estrutura para representar uma despesa
 struct Despesa
 {
     double valor;
@@ -17,14 +18,14 @@ void limparBuffer();
 void consultarSaldo(double *saldo, struct Despesa *despesas, int numDespesas);
 void registrarDespesa(struct Despesa *despesa, int *numDespesas);
 void adicionarSaldo(double *saldo);
-void listarDespesas(struct Despesa *despesas, int numDespesas);
+void gerenciarDespesas(struct Despesa *despesas, int *numDespesas, double *saldo);
 void exibirCategoriasFiltradas(struct Despesa *despesas, int numDespesas);
 void mostrarDespesaMaiorValor(struct Despesa *despesas, int numDespesas);
 void listarDespesasOrdemCrescenteValor(struct Despesa *despesas, int numDespesas);
 void listarDespesasOrdemCrescenteCategoria(struct Despesa *despesas, int numDespesas);
 void exibirCabecalho(const char *titulo);
-void gerenciarDespesas(struct Despesa *despesas, int *numDespesas, double *saldo);
 void exibirMenuDespesas();
+void listarDespesas(struct Despesa *despesas, int numDespesas);
 
 int main()
 {
@@ -114,6 +115,7 @@ void gerenciarDespesas(struct Despesa *despesas, int *numDespesas, double *saldo
     } while (opcao != 5);
 }
 
+// Exibe despesas filtradas por categoria
 void exibirCategoriasFiltradas(struct Despesa *despesas, int numDespesas)
 {
     exibirCabecalho("Categorias Filtradas");
@@ -141,6 +143,7 @@ void exibirCategoriasFiltradas(struct Despesa *despesas, int numDespesas)
     }
 }
 
+// Exibe a despesa de maior valor
 void mostrarDespesaMaiorValor(struct Despesa *despesas, int numDespesas)
 {
     exibirCabecalho("Despesa de Maior Valor");
@@ -172,6 +175,7 @@ void mostrarDespesaMaiorValor(struct Despesa *despesas, int numDespesas)
     }
 }
 
+// Lista despesas em ordem crescente de valor
 void listarDespesasOrdemCrescenteValor(struct Despesa *despesas, int numDespesas)
 {
     exibirCabecalho("Despesas em Ordem Crescente de Valor");
@@ -210,6 +214,7 @@ void listarDespesasOrdemCrescenteValor(struct Despesa *despesas, int numDespesas
     }
 }
 
+// Lista despesas em ordem crescente de categoria
 void listarDespesasOrdemCrescenteCategoria(struct Despesa *despesas, int numDespesas)
 {
     exibirCabecalho("Despesas em Ordem Crescente de Categoria");
@@ -248,6 +253,7 @@ void listarDespesasOrdemCrescenteCategoria(struct Despesa *despesas, int numDesp
     }
 }
 
+// Exibe o menu principal
 void exibirMenu()
 {
     exibirCabecalho("BoltFinance");
@@ -260,6 +266,7 @@ void exibirMenu()
     printf("Escolha uma opção: ");
 }
 
+// Exibe o menu de gerenciamento de despesas
 void exibirMenuDespesas()
 {
     exibirCabecalho("Menu de Despesas");
@@ -271,6 +278,7 @@ void exibirMenuDespesas()
     printf("Escolha uma opção: ");
 }
 
+// Limpa o buffer do teclado
 void limparBuffer()
 {
     int c;
@@ -278,6 +286,7 @@ void limparBuffer()
         ;
 }
 
+// Consulta o saldo, exibindo as despesas e subtraindo do saldo
 void consultarSaldo(double *saldo, struct Despesa *despesas, int numDespesas)
 {
     exibirCabecalho("Consultar Saldo");
@@ -297,6 +306,7 @@ void consultarSaldo(double *saldo, struct Despesa *despesas, int numDespesas)
     printf("Saldo após despesas: R$%.2f\n", *saldo);
 }
 
+// Registra uma nova despesa
 void registrarDespesa(struct Despesa *despesa, int *numDespesas)
 {
     exibirCabecalho("Registrar Despesa");
@@ -318,6 +328,7 @@ void registrarDespesa(struct Despesa *despesa, int *numDespesas)
     printf("\nDespesa registrada com sucesso!\n");
 }
 
+// Adiciona saldo à conta
 void adicionarSaldo(double *saldo)
 {
     exibirCabecalho("Adicionar Saldo");
@@ -333,6 +344,7 @@ void adicionarSaldo(double *saldo)
     printf("Saldo atualizado com sucesso!\n");
 }
 
+// Lista todas as despesas
 void listarDespesas(struct Despesa *despesas, int numDespesas)
 {
     exibirCabecalho("Lista de Despesas");
@@ -353,6 +365,7 @@ void listarDespesas(struct Despesa *despesas, int numDespesas)
     printf("========================================\n");
 }
 
+// Exibe um cabeçalho com o título
 void exibirCabecalho(const char *titulo)
 {
     printf("\n========================================\n");
