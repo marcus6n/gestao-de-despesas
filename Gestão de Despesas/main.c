@@ -3,10 +3,12 @@
 #include <string.h>
 
 #define MAX_DESPESAS 100
+#define MAX_NOME_PESSOA 50
 
 // Estrutura para representar uma despesa
 struct Despesa
 {
+    char nomePessoa[MAX_NOME_PESSOA];
     double valor;
     char data[11];
     char categoria[50];
@@ -26,6 +28,7 @@ void listarDespesasOrdemCrescenteCategoria(struct Despesa *despesas, int numDesp
 void exibirCabecalho(const char *titulo);
 void exibirMenuDespesas();
 void listarDespesas(struct Despesa *despesas, int numDespesas);
+void listarPessoasDespesas(struct Despesa *despesas, int numDespesas);
 
 int main()
 {
@@ -106,13 +109,37 @@ void gerenciarDespesas(struct Despesa *despesas, int *numDespesas, double *saldo
             listarDespesasOrdemCrescenteCategoria(despesas, *numDespesas);
             break;
         case 5:
+            listarPessoasDespesas(despesas, *numDespesas);
+            break;
+        case 6:
             printf("\nRetornando ao menu principal.\n");
             break;
         default:
             printf("\nOpção inválida. Por favor, escolha uma opção válida.\n");
         }
 
-    } while (opcao != 5);
+    } while (opcao != 6);
+}
+
+// Lista as pessoas registradas nas despesas
+void listarPessoasDespesas(struct Despesa *despesas, int numDespesas)
+{
+    exibirCabecalho("Usuários Registrados nas Despesas");
+
+    if (numDespesas == 0)
+    {
+        printf("Nenhuma despesa registrada.\n");
+    }
+    else
+    {
+        printf("Usuários registrados nas despesas:\n");
+        for (int i = 0; i < numDespesas; i++)
+        {
+            printf("%s\n", despesas[i].nomePessoa);
+        }
+    }
+
+    printf("========================================\n");
 }
 
 // Exibe despesas filtradas por categoria
@@ -274,7 +301,8 @@ void exibirMenuDespesas()
     printf("2. Mostrar Despesa de Maior Valor\n");
     printf("3. Listar Despesas por Ordem Crescente do Valor\n");
     printf("4. Listar Despesas por Ordem Crescente da Categoria\n");
-    printf("5. Voltar ao Menu Principal\n");
+    printf("5. Listar usuários registrados\n");
+    printf("6. Voltar ao menu principal\n");
     printf("Escolha uma opção: ");
 }
 
@@ -311,7 +339,10 @@ void registrarDespesa(struct Despesa *despesa, int *numDespesas)
 {
     exibirCabecalho("Registrar Despesa");
 
-    printf("\nDigite a data da despesa (DD/MM/AAAA): ");
+    printf("\nDigite o nome da pessoa na despesa: ");
+    scanf("%s", despesa[*numDespesas].nomePessoa);
+
+    printf("Digite a data da despesa (DD/MM/AAAA): ");
     scanf("%s", despesa[*numDespesas].data);
 
     printf("Digite a categoria da despesa: ");
